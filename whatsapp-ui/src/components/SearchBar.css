@@ -1,0 +1,14 @@
+.search-container {
+  background-color: #f0f2f5;
+  padding: 8px 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #fff;
+  font-size: 14px;
+  outline: none;
+}

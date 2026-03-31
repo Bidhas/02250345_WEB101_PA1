@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 400px;
+  background-color: #fff;
+  min-height: 100vh;
+}
+/* Tablet */
+@media (max-width: 768px) {
+  .app-container {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .app-container {
+    width: 100%;
+  }
+
+  .chat-name {
+    font-size: 14px;
+  }
+
+  .chat-message {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
