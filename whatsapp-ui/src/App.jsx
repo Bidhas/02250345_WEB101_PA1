@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import ChatItem from "./components/ChatItem";
 import "./App.css";
 
-// All chat data in one place
+// Data source for all chat items displayed in the chat list
 const chatsData = [
   { id: 1, name: "Tashi", message: "Hey bro", time: "10:30" },
   { id: 2, name: "Karma", message: "Are you coming?", time: "9:15" },
@@ -13,21 +13,23 @@ const chatsData = [
   { id: 5, name: "Dorji", message: "Did you submit already?", time: "Sun" },
 ];
 
+// Root component - manages state and renders all child components
 function App() {
-  // State to track what user types in search
+  // State to store the current search input value
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter chats based on search input
+  // Filters chatsData based on search input (case insensitive)
   const filteredChats = chatsData.filter((chat) =>
     chat.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="app-container">
+      {/* Top navigation bar */}
       <Navbar />
-      {/* Pass search state down to SearchBar */}
+      {/* Search bar - passes state down as props */}
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      {/* Render only filtered chats */}
+      {/* Render filtered chat list using reusable ChatItem component */}
       {filteredChats.map((chat) => (
         <ChatItem
           key={chat.id}

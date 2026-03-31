@@ -1,9 +1,12 @@
 import "./SearchBar.css";
 
-// Receives searchQuery and setSearchQuery as props from App
+// SearchBar component - receives search state from App via props
+// searchQuery: current input value
+// setSearchQuery: function to update the search state in App
 function SearchBar({ searchQuery, setSearchQuery }) {
   return (
     <div className="search-container">
+      {/* Controlled input - value tied to searchQuery state */}
       <input
         className="search-input"
         type="text"
